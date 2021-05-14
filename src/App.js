@@ -2,6 +2,7 @@ import './App.css';
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import { providers } from "ethers";
 import React, { useEffect,useState } from 'react';
+import Web3 from "web3";
 
 
 //  Create WalletConnect Provider
@@ -30,11 +31,15 @@ function App() {
     await provider.enable();
     
 
-   const web3Provider = await new providers.Web3Provider(provider);
+   //const web3Provider = await new providers.Web3Provider(provider);
 
-   const signer = web3Provider.getSigner();
-   console.log(signer);
-   setAddress("Adress::: "+signer); 
+   const web3 = new Web3(provider);
+
+   const accounts = await web3.eth.getAccounts();
+
+  //  const signer = web3Provider.getSigner();
+ //  console.log(signer);
+   setAddress("Adress:: "+accounts[0]); 
 
   }
 
