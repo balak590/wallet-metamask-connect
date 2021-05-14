@@ -8,12 +8,12 @@ const provider = new WalletConnectProvider({
   rpc: {
     1: "https://bsc-dataseed.binance.org/"
   },
-  // qrcode: false,
-  // qrcodeModalOptions: {
-  //   mobileLinks: [
-  //     "metamask",
-  //   ],
-  // },
+  qrcode: false,
+  qrcodeModalOptions: {
+    mobileLinks: [
+      "metamask",
+    ],
+  },
 });
 
 
