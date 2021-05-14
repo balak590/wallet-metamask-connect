@@ -2,7 +2,7 @@ import './App.css';
 import WalletConnectProvider from "@walletconnect/web3-provider";
 import { providers } from "ethers";
 import React, { useEffect,useState } from 'react';
-var ReactDOM = require('react-dom');
+
 
 //  Create WalletConnect Provider
 const provider = new WalletConnectProvider({
@@ -34,7 +34,7 @@ function App() {
 
    const signer = web3Provider.getSigner();
    console.log(signer);
-   setAddress(signer);
+   setAddress("Adress::: "+signer); 
 
   }
 
