@@ -42,7 +42,7 @@ function App() {
   
   return (
     <div className="App">
-    <h1 id="root">address</h1>
+    <h1 id="root">{address}</h1>
       
     </div>
   );
