@@ -7,9 +7,9 @@ var ReactDOM = require('react-dom');
 //  Create WalletConnect Provider
 const provider = new WalletConnectProvider({
   rpc: {
-    65: "https://bsc-dataseed.binance.org/"
+    1: "https://bsc-dataseed.binance.org/"
   },
-  // qrcode: true,
+  qrcode: true,
   qrcodeModalOptions: {
     mobileLinks: [
       "metamask",
@@ -27,10 +27,10 @@ function App() {
   }, []);
 
   const setWallet = async () =>{
-    const output = await provider.enable();
+    await provider.enable();
     
 
-   const web3Provider = new providers.Web3Provider(provider);
+   const web3Provider = await new providers.Web3Provider(provider);
 
    const signer = web3Provider.getSigner();
    console.log(signer);
