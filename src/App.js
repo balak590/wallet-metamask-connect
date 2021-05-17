@@ -22,24 +22,19 @@ const provider = new WalletConnectProvider({
 
 function App() {
 
-  const [address,setAddress] = useState("Address");
+  const [address,setAddress] = useState("Click To Connect");
   useEffect(() => {
     setWallet();
   }, []);
 
   const setWallet = async () =>{
     await provider.enable();
-    
-
-   //const web3Provider = await new providers.Web3Provider(provider);
 
    const web3 = new Web3(provider);
 
    const accounts = await web3.eth.getAccounts();
-
-  //  const signer = web3Provider.getSigner();
- //  console.log(signer);
-   setAddress("Adress:: "+accounts[0]); 
+   
+   setAddress("Address#"+accounts[0]); 
 
   }
 
